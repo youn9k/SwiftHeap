@@ -10,12 +10,12 @@ import Foundation
 struct MaxHeap<T: Comparable> {
     var heap: Array<T> = []
     
-    init(data: T) {
+    init(_ data: T) {
         heap.append(data)       // 0번 index 채우기용
         heap.append(data)       // 실제 Root Node 채우기
     }
     
-    mutating func insert(data: T) {
+    mutating func insert(_ data: T) {
         if heap.isEmpty {
             heap.append(data)
             heap.append(data)
