@@ -10,6 +10,7 @@ import Foundation
 struct MinHeap<T: Comparable> {
     var heap: Array<T> = []
     
+    init() { }
     init(_ data: T) {
         heap.append(data)       // 0번 index 채우기용
         heap.append(data)       // 실제 Root Node 채우기
