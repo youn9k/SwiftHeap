@@ -9,17 +9,16 @@ import Foundation
 
 struct MaxHeap<T: Comparable> {
     var heap: Array<T> = []
+    var isEmpty: Bool {
+        return heap.count <= 1 ? true : false
+    }
     
     init() { }
     init(_ data: T) {
         heap.append(data)       // 0번 index 채우기용
         heap.append(data)       // 실제 Root Node 채우기
     }
-    
-    func isEmpty() -> Bool {
-        return heap.count <= 1 ? true : false
-    }
-    
+
     mutating func insert(_ data: T) {
         if heap.isEmpty {
             heap.append(data)
