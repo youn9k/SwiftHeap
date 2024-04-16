@@ -67,17 +67,17 @@ struct MinHeap<T: Comparable> {
             }
             
             // case3. 왼쪽 & 오른쪽 자식 노드 모두 있는 경우
-            // case 3-1. 자식들이 자신보다 모두 작은 경우
+            // case 3-1. 자식들이 자신보다 모두 큰 경우
             if (heap[leftChildIndex] > heap[poppedIndex]) && (heap[rightCildIndex] > heap[poppedIndex]) {
                 return .none
             }
             
-            // case 3-2. 자식들이 자신보다 모두 큰 경우 (왼쪽과 오른쪽 자식 중 더 큰 자식 선별)
+            // case 3-2. 자식들이 자신보다 모두 작은 경우 (왼쪽과 오른쪽 자식 중 더 작은 자식 선별)
             if (heap[leftChildIndex] < heap[poppedIndex]) && (heap[rightCildIndex] < heap[poppedIndex]) {
                 return heap[leftChildIndex] < heap[rightCildIndex] ? .left : .right
             }
             
-            // case 3-3. 왼쪽 & 오른쪽 중 한 자식만 자신보다 큰 경우
+            // case 3-3. 왼쪽 & 오른쪽 중 한 자식만 자신보다 작은 경우
             return heap[leftChildIndex] < heap[poppedIndex] ? .left : .right
         }
         
